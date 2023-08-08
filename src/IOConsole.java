@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class IOConsole {
     private final Scanner scanner;
     private int option;
-    private Balance balance;
+    private final Balance balance;
 
     enum Type {
         EXPENSE,
