@@ -71,22 +71,27 @@ public class Operation {
     }
 
     public static Operation create(Scanner scanner, int stepType) {
+        String name;
+        float amount;
+        String category;
         Type type;
+        
         if (stepType == 1) {
             type = Type.EXPENSE;
         } else {
             type = Type.INCOME;
         }
 
+
 //        while y control flow for errors/exceptions - trycatch
         System.out.println("Creating new " + type.name());
-        System.out.println("Enter " + type.name() + "name:");
-        String name = scanner.nextLine();
-        System.out.println("Enter " + type.name() + "amount:");
-        float amount = scanner.nextFloat();
-        System.out.println("Enter " + type.name() + "category:");
+        System.out.println("Enter " + type.name() + " name:");
+        name = scanner.nextLine();
+        System.out.println("Enter " + type.name() + " amount:");
+        amount = scanner.nextFloat();
+        System.out.println("Enter " + type.name() + " category:");
 //        log possible categories
-        String category = scanner.nextLine().toUpperCase();
+        category = scanner.nextLine().toUpperCase();
 
         return new Operation(type, name, amount, Category.valueOf(category));
     }
